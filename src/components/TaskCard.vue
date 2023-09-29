@@ -1,9 +1,18 @@
+<script setup>
+defineProps({
+  title: String,
+  description: String,
+  done: { type: Boolean, default: false }
+})
+</script>
+
 <template>
   <div class="task-card">
     <div>
-      <h3>Learn to use Vue.js</h3>
-      <p>Complete this toDO app</p>
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
     </div>
+    <p>{{ done ? '✔' : '❌' }}</p>
   </div>
 </template>
 
