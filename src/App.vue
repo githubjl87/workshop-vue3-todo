@@ -11,9 +11,7 @@ import TaskList from "@/components/TasksList.vue";
   </header>
 
   <main>
-    <div style="display: flex; height: 40vh; justify-content: center; align-items: center; font-size: 2.5em;">
-      <TaskList />
-    </div>
+    <TaskList />
   </main>
 
   <footer>

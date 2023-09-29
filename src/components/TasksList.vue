@@ -1,3 +1,11 @@
+<script setup>
+import TaskCard from './TaskCard.vue';
+</script>
+
 <template>
-  <p>This is my list of tasks</p>
+  <TaskCard />
+  <TaskCard />
+  <TaskCard />
+  <TaskCard />
+
 </template>
