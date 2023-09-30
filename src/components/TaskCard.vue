@@ -1,8 +1,11 @@
 <script setup>
+import Checkbox from "./Checkbox.vue";
+
 defineProps({
   title: String,
   description: String,
-  done: { type: Boolean, default: false }
+  done: { type: Boolean, default: false },
+  taskIndex: Number,
 })
 </script>
 
@@ -12,7 +15,7 @@ defineProps({
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
     </div>
-    <p>{{ done ? '✔' : '❌' }}</p>
+    <Checkbox @click="$emit('toggle-task', taskIndex)" :checked="done" />
   </div>
 </template>
 
