@@ -8,6 +8,13 @@ function addTask(title, description) {
 
 }
 
+function resetForm() {
+  newTitle.value = ''
+  newDescription.value = ''
+  showNewTaskForm.value = false
+
+}
+
 const newTitle = ref('')
 const newDescription = ref('')
 const showNewTaskForm = ref(false)
@@ -15,7 +22,7 @@ const showNewTaskForm = ref(false)
 
 <template>
   <button class="btn round-icon" @click="showNewTaskForm = !showNewTaskForm">＋</button>
-  <div v-show="showNewTaskForm" class="task-card new-task" @keyup.enter="addTask(newTitle, newDescription)">
+  <div v-show="showNewTaskForm" class="task-card new-task" @keyup.enter="addTask(newTitle, newDescription), resetForm()">
     <div>
       <input type="text" placeholder="What would you like to do?" v-model="newTitle"/>
       <textarea placeholder="Add some details about your task..." v-model="newDescription"></textarea>
